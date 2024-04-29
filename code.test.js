@@ -1,5 +1,5 @@
 const jsc = require('jsverify');
-const { permutationSort } = require('./code.js');
+const { permutationSort, isSorted, permute, swap } = require('./code.js');
 
 const testSort = jsc.forall('array nat', function (arr) {
 
