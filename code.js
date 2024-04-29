@@ -33,6 +33,7 @@ function permutationSort(arr) {
         permutationsTried++;
         if (isSorted(permutedArr)) {
             arr.splice(0, arr.length, ...permutedArr); 
+            return permutationsTried; 
         }
     });
 
