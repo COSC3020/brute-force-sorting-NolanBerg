@@ -41,5 +41,8 @@ function permutationSort(arr) {
 
 module.exports = {
     permutationSort
+    isSorted
+    permute
+    swap
 };
 
