@@ -21,3 +21,9 @@ randomly without memory instead of systematically trying them?
 
 Describe your reasoning and the conclusion you've come to. Your reasoning is the
 most important part. Add your answer to this markdown file.
+
+Sources: Used ai for some of this assignment 
+
+In the best case scenario, where the array is already in order, the operation would only require n checks, leading to a best case runtime complexity of $(O(n))$.
+
+In the worst case scenario, the algorithm is tasked with producing every potential permutation, which amounts to factorial growth. So the worst case runtime complexity for this algorithm is $(O(n!))$.
