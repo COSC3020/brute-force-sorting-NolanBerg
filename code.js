@@ -1,49 +1,43 @@
-function swap(arr, i, j) {
-    const temp = arr[i];
-    arr[i] = arr[j];
-    arr[j] = temp;
-}
+function permutationSort(a) {
+    let permutations = 0;
+    let found = false;
 
-function permute(arr, start, end, callback) {
-    if (start === end) {
-        callback(arr);
-        return;
+    function swap(arr, i, j) {
+        let temp = arr[i];
+        arr[i] = arr[j];
+        arr[j] = temp;
     }
 
-    for (let i = start; i <= end; i++) {
-        swap(arr, start, i);
-        permute(arr, start + 1, end, callback);
-        swap(arr, start, i);
+    function isSorted(arr) {
+        for (let i = 1; i < arr.length; i++) {
+            if (arr[i] < arr[i - 1]) {
+                return false;
+            }
+        }
+        return true;
     }
-}
 
-function isSorted(arr) {
-    for (let i = 1; i < arr.length; i++) {
-        if (arr[i] < arr[i - 1]) {
-            return false;
+    function generatePermutations(arr, start) {
+        if (start === arr.length - 1) {
+            permutations++;
+            if (isSorted(arr)) {
+                found = true;
+                return;
+            }
+        }
+        for (let i = start; i < arr.length; i++) {
+            swap(arr, start, i);
+            generatePermutations(arr, start + 1);
+            if (found) return; 
+            swap(arr, start, i);
         }
     }
-    return true;
-}
 
-function permutationSort(arr) {
-    let permutationsTried = 0;
-
-    permute(arr, 0, arr.length - 1, (permutedArr) => {
-        permutationsTried++;
-        if (isSorted(permutedArr)) {
-            arr.splice(0, arr.length, ...permutedArr); 
-            return permutationsTried; 
-        }
-    });
-
-    return permutationsTried;
+    generatePermutations(a, 0);
+    return permutations;
 }
 
 module.exports = {
-    permutationSort,
-    isSorted,
-    permute,
-    swap
+    permutationSort
 };
 
