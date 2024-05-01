@@ -26,4 +26,4 @@ Sources: Used ai for some of this assignment
 
 In the best case scenario, where the array is already in order, the operation would only require n checks, leading to a best case runtime complexity of $(O(n))$.
 
-
+In the worst case scenario, every permutation must be generated and checked. The algorithm creates $( n! )$ permutations and performs comparisons to see if it's sorted. This combination of generating and checking permutations leads to $( O(n \times n!) )$. Generating permutations randomly without tracking which have been checked can lead to repetition, which can increase the average number of checks needed. However, that does not affect the worst-case theoretical complexity.
