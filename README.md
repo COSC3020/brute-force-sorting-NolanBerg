@@ -1,3 +1,4 @@
+[![Review Assignment Due Date](https://classroom.github.com/assets/deadline-readme-button-24ddc0f5d75046c5622901739e7c5dd533143b0c8e959d652212380cedb1ea36.svg)](https://classroom.github.com/a/7eEMzrNd)
 # Brute-Force Sorting
 
 We talked about the complexity of the sorting problem, and used an argument over
@@ -20,3 +21,9 @@ randomly without memory instead of systematically trying them?
 
 Describe your reasoning and the conclusion you've come to. Your reasoning is the
 most important part. Add your answer to this markdown file.
+
+Sources: Used ai for some of this assignment 
+
+In the best case scenario, where the array is already in order, the operation would only require n checks, leading to a best case runtime complexity of $(O(n))$.
+
+In the worst case scenario, every permutation must be generated and checked. The algorithm creates $( n! )$ permutations and performs comparisons to see if it's sorted. This combination of generating and checking permutations leads to $( O(n \times n!) )$. Generating permutations randomly without tracking which have been checked can lead to repetition, which can increase the average number of checks needed. However, that does not affect the worst-case theoretical complexity.
